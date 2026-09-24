@@ -1,5 +1,6 @@
 # Sample image assets
 
+- `led-curve-2026-09-24.gif`: supplied example animation exported from LED Curve Studio, displayed at 360 pixels wide in the main README. The file is 480 x 360 pixels with 21 frames and a 1.05-second loop; it is separate from the app's 1.70-second default cycle.
 - `led-curve-studio-overview.png`: browser screenshot of the app with the cyan double-pulse default, captured directly from the app panel for the main README, excluding the surrounding page background. The layout and curve reproduce the supplied reference screenshot.
 - `AI_esp32_assistant.png`: original supplied photograph, kept unchanged.
 - `AI_esp32_assistant_unlit.png`: the app's default sample. The LED is off, with a subtle warm ivory diffuser that blends into the enclosure. This copy was edited with the built-in image generation tool and is also embedded in `index.html` for offline use.

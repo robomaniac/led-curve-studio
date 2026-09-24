@@ -1,6 +1,6 @@
 # LED Curve Studio
 
-Browser-based LED animation designer with **experimental browser flashing** in desktop Chrome/Edge. Run it locally with the included launcher; a published HTTPS copy can also support browser programming.
+**[Open LED Curve Studio](https://robomaniac.github.io/led-curve-studio/)**: use the app directly in your browser, with no download, installation, or local launcher. Desktop Chrome/Edge also supports **experimental browser flashing**.
 
 A dependency-free LED animation designer that runs entirely in one `index.html`.
 
@@ -12,21 +12,30 @@ A dependency-free LED animation designer that runs entirely in one `index.html`.
 
 LED Curve Studio began after I watched Clicks’ [“We could have designed a new BlackBerry. Here’s why we didn’t.”](https://www.youtube.com/watch?v=fLwi43Tcaj8&t=244s). The interface shown at 4:04 sparked a simple challenge: “I could vibe-code this.” This project is my AI-assisted recreation of that interface, developed into a working browser-based editor for designing, previewing, and exporting LED animations.
 
+## Example animation
+
+<p align="center">
+  <img src="images/led-curve-2026-09-24.gif" width="360" alt="Example LED animation exported from LED Curve Studio">
+</p>
+
+An example GIF exported from the editor. You can export your own animation with **Export GIF**.
+
 ## Use it
 
-For design and export only, open `index.html` directly. No install, build step, web server, or network connection is required. Direct Arduino programming uses the included localhost launcher or an HTTPS deployment of this project.
+1. In your browser, open **[LED Curve Studio](https://robomaniac.github.io/led-curve-studio/)**. The page should show the studio, its sample photo, and a moving playhead. **Pause** means the preview is playing. If the page does not load, stop and check the address and your internet connection. No local terminal is needed.
+2. Choose **Change image** or drop a photo onto the preview.
+3. Choose **Edit LED**, then drag the LED body to move it.
+4. Use the corner and rotation handles to size and orient the light.
+5. Pick a shape, color, glow spread, preset, and cycle speed.
+6. Drag curve points to control brightness over time. Double-click the curve to add a point or a non-endpoint handle to remove it.
 
-1. Choose **Change image** or drop a photo onto the preview.
-2. Choose **Edit LED**, then drag the LED body to move it.
-3. Use the corner and rotation handles to size and orient the light.
-4. Pick a shape, color, glow spread, preset, and cycle speed.
-5. Drag curve points to control brightness over time. Double-click the curve to add a point or a non-endpoint handle to remove it.
+**Optional offline use:** download and extract the repository, then open `index.html` directly for design and export. No install, build step, web server, or network connection is required. For experimental Arduino programming from a local copy, use the [Windows launcher instructions below](#run-from-the-project-root-windows). The live HTTPS app also supports programming.
 
 The sample starts with a cyan-blue (`#20cfff`) double pulse repeating every 1.70 seconds, with **Smooth** and **Link ends** on. This is a custom sample curve, so no preset is highlighted. The preview starts playing automatically whenever the page opens. Use **Pause** to stop it. The playhead can be dragged to preview a moment in the cycle. Keyboard users can nudge the LED with the arrow keys and edit selected curve points with the arrow and Delete keys.
 
-### Open the cyan double-pulse preview on Windows
+### Open a local copy on Windows (optional)
 
-The updated image and animation are saved in this project folder. The steps below open that local copy in a browser. Publishing to GitHub is a separate action; the hosted site will show its last published version until you upload these changes.
+Use these steps to run the files on your computer, including changes you have made locally. If you are using the live app linked above, you can skip this section. Local edits appear online only after they are pushed to `main` and GitHub Pages finishes deploying.
 
 1. Press **Windows+E** to open **File Explorer**.
 2. Open the folder where you extracted or cloned this repository. You should see `index.html`, `README.md`, and `Start LED Curve Studio.cmd` together. If you downloaded a ZIP, right-click it, choose **Extract All...**, complete extraction, and open the extracted folder first. If these files are missing, stop and locate the folder containing them before continuing.
@@ -44,10 +53,10 @@ The updated image and animation are saved in this project folder. The steps belo
 
 **Experimental:** automated tests cover simulated USB/serial devices and application behavior. Repeatable uploads on physical boards have not yet been confirmed for this release, so successful tests do not guarantee a successful flash on your computer. Browser permissions, USB drivers, bootloader state, and board variants can affect uploading. AVR uploads include readback verification; Nano R4 uploads do not.
 
-For programming, launch the localhost version or use an HTTPS deployment of this project. Opening `index.html` directly from disk is for design and export only:
+Use the live HTTPS app or the local launcher. Opening `index.html` directly from disk is for design and export only:
 
-1. Double-click **Start LED Curve Studio.cmd** and keep its terminal window open. Launching it again reuses the running server, so the address stays stable (normally `http://localhost:8765`).
-2. In the opened Chrome/Edge tab, finish the curve and open **Arduino code**.
+1. In **desktop Chrome or Edge**, open **[LED Curve Studio](https://robomaniac.github.io/led-curve-studio/)** and confirm the studio appears. No launcher is needed for the live app. For a local copy instead, double-click **Start LED Curve Studio.cmd** in the extracted project folder and keep its terminal window open. Launching it again reuses the running server, so the address stays stable (normally `http://localhost:8765`). Stop if the page fails to load.
+2. In that Chrome/Edge tab, finish the curve and open **Arduino code**.
 3. Select the board profile and LED output.
 4. Close Arduino IDE's Serial Monitor and any other tab using the board, then click **Program…** and select the USB device/port. Firmware is downloaded and checked before the board is reset or written.
 5. **Nano R4 only:** if the status asks for bootloader access, click **Program Nano R4** again and select **Nano R4 (Upgrade)**. If Upgrade is absent, cancel the picker, double-tap the board's **RESET** button, then click **Program Nano R4** again. The second selection grants access to the bootloader; permissions from localhost do not carry over to the hosted site.
@@ -183,7 +192,7 @@ Installing the driver does not compile or flash the player. The next programming
 
 Version 1.4 limits the complete automatic reset attempt to **8 seconds**, including USB open, interface claim, descriptor reads, reset request, connection release, and bootloader discovery. On timeout it restores the controls, reports the stalled step, and closes late USB results so an expired attempt cannot continue issuing reset or flash commands. A timed-out runtime handle is not reused.
 
-1. In the existing studio browser tab, press **Ctrl+Shift+R** and confirm **v1.4** or later. This loads the corrected code and clears the old stalled browser request. Keep the existing serving terminal open; no server restart is needed. If it is closed, double-click **Start LED Curve Studio.cmd** first.
+1. In the existing studio browser tab, press **Ctrl+Shift+R** and confirm **v1.4** or later. This loads the corrected code and clears the old stalled browser request. On the live site, no terminal is needed. For a local copy, keep the existing serving terminal open; no server restart is needed. If it is closed, double-click **Start LED Curve Studio.cmd** first.
 2. If the Nano R4 is already listed as **Nano R4 (Upgrade)** or **Nano R4 DFU**, continue to step 3. Otherwise press its **RESET** button twice quickly to enter the bootloader. This is Arduino's [documented manual recovery](https://support.arduino.cc/hc/en-us/articles/11011849739804-dfu-util-errors-when-uploading-exit-status-74).
 3. Open **Arduino code**, select **Arduino Nano R4** and the intended LED output, then click **Program Nano R4**. In the USB picker select **Nano R4 (Upgrade)**. If it is absent, cancel and check the USB driver before retrying.
 4. Wait for the completion message and confirm the physical LED plays the selected pattern. If programming stops on an error, retain its exact wording; a completed simulated test does not substitute for this hardware check.
@@ -205,6 +214,14 @@ The automatic Nano R4 reset is bounded to eight seconds. Later bootloader transf
 
 ## Repository contents
 
-Publish this folder's contents as the repository root. Keep `index.html`, the `images/` folder, both launcher files, this README, `.gitignore`, the complete `firmware` folder, and `tests/` for regression checks. The `.ino` files are firmware source, and the `.bin` files are required by direct browser programming; do not exclude them as disposable build output.
+Publish this folder's contents as the repository root. Keep `index.html`, the `images/` folder, both launcher files, this README, `.gitignore`, `.nojekyll`, the complete `firmware` folder, and `tests/` for regression checks. The `.ino` files are firmware source, and the `.bin` files are required by direct browser programming; do not exclude them as disposable build output.
 
-This is a static site with no build step. Moving the files locally does not upload them to GitHub or deploy GitHub Pages.
+This is a static site with no application build step. Moving the files locally does not upload them to GitHub or deploy GitHub Pages.
+
+## Update the live site
+
+GitHub Pages serves the root folder of the `main` branch in [robomaniac/led-curve-studio](https://github.com/robomaniac/led-curve-studio). Its repository setting is **Settings > Pages > Build and deployment > Source: Deploy from a branch**, with **Branch: main** and **/(root)**. The root `.nojekyll` file lets Pages serve these static files without Jekyll processing. Each push to `main` starts a Pages deployment. Publish `index.html` and both firmware `.bin` files together when changing the uploader.
+
+1. Commit and push the reviewed changes to `main` using your Git client. In VS Code, open the repository folder, choose **Source Control**, review and stage the intended files with **+**, enter a commit message, choose **Commit**, then choose **Sync Changes**. Confirm the push completes; stop if Git reports an error. For uploader changes, run the regression checks above before pushing.
+2. Open the repository's **[Actions tab](https://github.com/robomaniac/led-curve-studio/actions)** and select the latest **pages build and deployment** run. Wait for it to finish with a green check. If it fails, open the failed job's log and resolve the error before treating the update as published.
+3. Open **[LED Curve Studio](https://robomaniac.github.io/led-curve-studio/)**. If its tab was already open, press **Ctrl+Shift+R** after the deployment succeeds to load the new files. Confirm your change appears and the preview plays. No local server restart is required.
