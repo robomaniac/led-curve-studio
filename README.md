@@ -4,15 +4,39 @@
 
 A dependency-free LED animation designer that runs entirely in one `index.html`.
 
+## Inspiration
+
+LED Curve Studio began after I watched Clicks’ [“We could have designed a new BlackBerry. Here’s why we didn’t.”](https://www.youtube.com/watch?v=fLwi43Tcaj8&t=244s). The interface shown at 4:04 sparked a simple challenge: “I could vibe-code this.” This project is my AI-assisted recreation of that interface, developed into a working browser-based editor for designing, previewing, and exporting LED animations.
+
+The **Clicks v0.2 interface shown at 4:04** is the design reference: its live preview, draggable curve, six presets, speed and color controls, smoothing, reset, and curve JSON export provided the starting point. I extended my recreation with the following changes.
+
+### What I changed and added
+
+| Area | Changes in this project |
+| --- | --- |
+| **Sample and appearance** | Replaced the phone photo with an unlit ESP32 assistant image, aligned a subtle LED overlay to its diffuser, and set a cyan double pulse with a 1.70-second cycle. The preview starts automatically; **Use sample** restores the complete demo. |
+| **Your own photos** | Load a local image with **Change image** or drag and drop. Photos are resized for storage and remain in the browser. |
+| **LED placement** | Move, resize, and rotate the light; choose **Ellipse**, **Rounded**, or **Thin bar**; adjust glow spread; use alignment guides, keyboard nudging, and **Reset placement**. |
+| **Curve editing** | Added **Add point**, **Delete selected**, **Undo/Redo**, keyboard shortcuts, a draggable orange playhead for scrubbing, and **Link ends** to match the start and end brightness. |
+| **Custom colors** | Added a dedicated custom-color picker alongside the palette and rainbow control. |
+| **Saving and sharing** | Automatically save settings and photos locally, copy the full curve/LED setup as JSON, download a project including its photo, and import saved setups with input validation. |
+| **Animated GIF export** | Export the photo and animated LED, choose 0.25-30 seconds of playback, and see frame counts, cycle counts, and loop continuity information before exporting. |
+| **Arduino sketch export** | Generate, copy, or download a non-blocking `.ino` sketch from the brightness curve, with board selection and built-in LED or external D9 output options. |
+| **Browser programming (experimental)** | Program Nano R4, Uno R3, and classic Nano with new or old bootloaders from desktop Chrome/Edge using bundled player firmware. |
+| **Upload checks and recovery** | Added firmware size/hash checks, AVR readback verification, bounded Nano R4 automatic reset, bootloader permission/recovery instructions, and simulated USB/serial tests. Nano R4 flash is not read back. |
+| **Running the app** | Packaged the editor in one HTML file with its sample embedded, published a live GitHub Pages version, and added a Windows launcher that reuses the local server. The layout adapts to smaller screens. |
+| **Examples and documentation** | Added exported GIF examples, matching simulation/real Nano R4 clips, and complete setup, troubleshooting, testing, firmware, and publishing guides. |
+
 <details>
 <summary>Table of contents</summary>
 
+- [Inspiration](#inspiration)
+  - [What I changed and added](#what-i-changed-and-added)
 - [Use it](#use-it)
 - [Saving and sharing](#saving-and-sharing)
 - [Program an Arduino from Chrome (experimental)](#program-an-arduino-from-chrome-experimental)
 - [Example animation](#example-animation)
 - [Simulation and real hardware](#simulation-and-real-hardware)
-- [Inspiration](#inspiration)
 - [Guides](#guides)
 
 </details>
@@ -79,10 +103,6 @@ The GIFs loop continuously. GitHub can pause them according to each viewer's [ac
 3. Return to this README and reload. Both LEDs should blink without clicking Play. If they remain still, recheck the setting in the same account or use each image's Play button. No rebuild or redeployment is needed; the README cannot override a viewer's preference.
 
 </details>
-
-## Inspiration
-
-LED Curve Studio began after I watched Clicks’ [“We could have designed a new BlackBerry. Here’s why we didn’t.”](https://www.youtube.com/watch?v=fLwi43Tcaj8&t=244s). The interface shown at 4:04 sparked a simple challenge: “I could vibe-code this.” This project is my AI-assisted recreation of that interface, developed into a working browser-based editor for designing, previewing, and exporting LED animations.
 
 ## Guides
 
