@@ -76,7 +76,7 @@ Prerequisites: Windows PowerShell, Arduino IDE 2 installed in its default per-us
 
    Do not change the Nano R4 profile's metadata when rebuilding AVR firmware. If you change the configuration structure, update the browser's patch offsets and validation together as well.
 
-5. Run the application and programming checks in the [main README](../README.md). Refresh an existing Chrome/Edge tab to load the changed HTML and clear its in-memory firmware cache; an already running local server can be reused. Rebuilding does not update a board: use the documented **Program** workflow if you want to test the changed firmware on hardware.
+5. Complete [Verify a checkout](../docs/DEVELOPMENT.md#verify-a-checkout) and the [upload regression tests](../docs/DEVELOPMENT.md#upload-regression-tests), then follow [Program an Arduino](../docs/SETUP.md#program-an-arduino) for the physical-board check. Refresh an existing Chrome/Edge tab to load the changed HTML and clear its in-memory firmware cache; an already running local server can be reused. Rebuilding does not update a board: the **Program** workflow uploads the changed firmware and replaces the current sketch.
 
 6. Clean up the temporary build directory after checking the result. The following guard limits removal to this guide's temporary folder name directly inside the system temporary directory.
 
