@@ -20,6 +20,14 @@ LED Curve Studio began after I watched Clicks’ [“We could have designed a ne
 
 An example GIF exported from the editor. You can export your own animation with **Export GIF**.
 
+## Simulation and real hardware
+
+| Simulation (1 Hz) | Physical Arduino Nano R4 |
+| :---: | :---: |
+| <img src="images/arduino_R4_simulation_comparison.gif" width="300" height="200" alt="Simulated 1 Hz LED blink on an Arduino Nano R4"> | <img src="images/arduino_R4_hardware_comparison.gif" width="300" height="200" alt="Recorded yellow LED blinking on a physical Arduino Nano R4"> |
+
+The simulation and a physical Arduino Nano R4 are shown side by side. In person, the board's yellow LED is much brighter than this recording conveys. Both GIFs are cropped to the same size; their original animation timing is preserved, so the loops are not synchronized.
+
 ## Use it
 
 1. In your browser, open **[LED Curve Studio](https://robomaniac.github.io/led-curve-studio/)**. The page should show the studio, its sample photo, and a moving playhead. **Pause** means the preview is playing. If the page does not load, stop and check the address and your internet connection. No local terminal is needed.

@@ -7,6 +7,17 @@
 
 The default animated overlay is a rounded pill centered at `(827.6, 377.8)` in the `1448 × 1086` image, sized `104 × 22` pixels and rotated `28°` clockwise. Coordinates are normalized for responsive resizing. The default animation is cyan-blue (`#20cfff`), using two smooth pulses per 1.70-second cycle with automatic playback. The default glow spread is `0.75×`. The live preview and GIF export use a translucent light core with gentle spill and no bright outline.
 
+## Arduino Nano R4 comparison
+
+The main README displays these two cropped animations side by side at 300 x 200 pixels. Both files are 480 x 320 pixels and loop continuously. FFmpeg was used to crop, resize, and encode the GIFs without changing frame counts or frame durations. No brightness correction was applied.
+
+| README asset | Original file (preserved unchanged) | Crop in original pixels | Animation |
+| --- | --- | --- | --- |
+| `arduino_R4_simulation_comparison.gif` | `arduino_R4_1hz_blink.gif` | 300 x 200 at x=105, y=70; resized to 480 x 320 | 20 frames, 50 ms each, 1.00-second loop |
+| `arduino_R4_hardware_comparison.gif` | `arduino_R4_real_blink.GIF` | 480 x 320 at x=90, y=85 | 35 frames, 50 ms each, 1.75-second loop |
+
+Crop coordinates start at the top-left corner. The boards are framed at similar scales with the LEDs visible. The physical board's yellow LED is much brighter in person than the recording conveys. The clips retain their different loop durations and are not synchronized.
+
 ## Image editing prompts
 
 ### Initial unlit copy
