@@ -5,7 +5,7 @@ Browser-based LED animation designer with **experimental browser flashing** in d
 A dependency-free LED animation designer that runs entirely in one `index.html`.
 
 <p align="center">
-  <a href="images/led-curve-studio.png"><img src="images/led-curve-studio.png" width="520" alt="LED Curve Studio with the ESP32 assistant photo and a smooth cyan double-pulse curve."></a>
+  <a href="images/led-curve-studio-overview.png"><img src="images/led-curve-studio-overview.png" width="520" alt="LED Curve Studio with the ESP32 assistant photo and a smooth cyan double-pulse curve."></a>
 </p>
 
 ## Inspiration

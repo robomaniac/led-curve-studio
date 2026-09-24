@@ -1,6 +1,6 @@
 # Sample image assets
 
-- `led-curve-studio.png`: browser screenshot of the app with the cyan double-pulse default, captured from the running UI for the main README. The layout and curve reproduce the supplied reference screenshot.
+- `led-curve-studio-overview.png`: browser screenshot of the app with the cyan double-pulse default, captured directly from the app panel for the main README, excluding the surrounding page background. The layout and curve reproduce the supplied reference screenshot.
 - `AI_esp32_assistant.png`: original supplied photograph, kept unchanged.
 - `AI_esp32_assistant_unlit.png`: the app's default sample. The LED is off, with a subtle warm ivory diffuser that blends into the enclosure. This copy was edited with the built-in image generation tool and is also embedded in `index.html` for offline use.
 
