@@ -1,0 +1,37 @@
+# Operating-system metadata
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor and local workspace state
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporary files and local credentials
+*.tmp
+*.bak
+*.log
+~$*
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+**/secrets.h
+
+# Local visual and browser-test artifacts
+*-preview.png
+sample-*.jpg
+browser-smoke.ps1
+
+# Arduino compiler intermediates
+firmware/**/.build/
+firmware/**/build/
+**/.pio/
+**/managed_components/
+*.elf
+*.hex
+*.map
+
+# Keep firmware/**/*.bin: these are required for browser programming.
