@@ -28,6 +28,17 @@ An example GIF exported from the editor. You can export your own animation with 
 
 The simulation and a physical Arduino Nano R4 are shown side by side. In person, the board's yellow LED is much brighter than this recording conveys. Both GIFs are cropped to the same size; their original animation timing is preserved, so the loops are not synchronized.
 
+<details>
+<summary>If the GIFs do not play automatically on GitHub</summary>
+
+These GIFs are embedded as looping animations. GitHub can pause them according to each viewer's accessibility preferences; the README cannot override that personal setting. See [GitHub's motion settings documentation](https://docs.github.com/en/account-and-profile/how-tos/account-settings/managing-accessibility-settings#managing-motion).
+
+1. In your web browser, sign in to GitHub and open [Settings > Accessibility](https://github.com/settings/accessibility). You should see the **Motion** section. If GitHub asks you to sign in, complete that first.
+2. Under **Motion > Autoplay animated images**, select **Enabled**. Confirm **Enabled** is selected before continuing.
+3. Return to [this README's comparison](https://github.com/robomaniac/led-curve-studio#simulation-and-real-hardware) and reload the page. Both LEDs should blink repeatedly without clicking Play. This changes your GitHub viewing preference; no project rebuild or redeployment is needed. If they remain still, recheck that **Enabled** is selected in the same signed-in account, then try each image's Play button.
+
+</details>
+
 ## Use it
 
 1. In your browser, open **[LED Curve Studio](https://robomaniac.github.io/led-curve-studio/)**. The page should show the studio, its sample photo, and a moving playhead. **Pause** means the preview is playing. If the page does not load, stop and check the address and your internet connection. No local terminal is needed.
