@@ -4,6 +4,29 @@
 
 A dependency-free LED animation designer that runs entirely in one `index.html`.
 
+<details>
+<summary>Table of contents</summary>
+
+- [Inspiration](#inspiration)
+- [Example animation](#example-animation)
+- [Simulation and real hardware](#simulation-and-real-hardware)
+- [Use it](#use-it)
+  - [Open a local copy on Windows (optional)](#open-a-local-copy-on-windows-optional)
+- [Program an Arduino from Chrome (experimental)](#program-an-arduino-from-chrome-experimental)
+- [Saving and sharing](#saving-and-sharing)
+- [Run from the project root (Windows)](#run-from-the-project-root-windows)
+  - [If Chrome displays a profile error](#if-chrome-displays-a-profile-error)
+- [Verify a checkout](#verify-a-checkout)
+- [Upload regression tests (no board needed)](#upload-regression-tests-no-board-needed)
+- [Nano R4 on Windows: USB driver and reset recovery](#nano-r4-on-windows-usb-driver-and-reset-recovery)
+  - [Optional: install the driver on a Windows computer that lacks it](#optional-install-the-driver-on-a-windows-computer-that-lacks-it)
+  - [Recover a stalled automatic reset](#recover-a-stalled-automatic-reset)
+- [If programming fails](#if-programming-fails)
+- [Repository contents](#repository-contents)
+- [Update the live site](#update-the-live-site)
+
+</details>
+
 <p align="center">
   <a href="images/led-curve-studio-overview.png"><img src="images/led-curve-studio-overview.png" width="520" alt="LED Curve Studio with the ESP32 assistant photo and a smooth cyan double-pulse curve."></a>
 </p>
